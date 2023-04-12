@@ -14,8 +14,13 @@ class Boggle():
         """Read and return all words in dictionary."""
 
         dict_file = open(dict_path)
-        words = [w.strip() for w in dict_file]
+        words = []
+        for w in dict_file:
+            stripped = w.strip()
+            words.append(stripped.upper())
+
         dict_file.close()
+        
         return words
 
     def make_board(self):

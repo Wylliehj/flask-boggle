@@ -11,6 +11,9 @@ def show_board():
     """Makes game board and saves it to the session storage"""
     board = boggle_game.make_board()
     session['board'] = board
+    if session['times-played']:
+        return render_template('base.html', board=board)
+
     session['highscore'] = None
     session['times-played'] = None
     
@@ -47,7 +50,7 @@ def handle_data(score):
             session['highscore'] = score
     else:
         session['highscore'] = score
-    return session['highscore']
+    return 
 
 @app.route('/data')
 def return_data():

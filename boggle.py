@@ -20,7 +20,6 @@ class Boggle():
             words.append(stripped.upper())
 
         dict_file.close()
-        
         return words
 
     def make_board(self):
